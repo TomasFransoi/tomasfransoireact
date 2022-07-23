@@ -1,0 +1,7 @@
+* {
+    margin: 0px;
+    padding: 0px; }
+.opciones{
+    display: flex;
+    justify-content: center;
+}
