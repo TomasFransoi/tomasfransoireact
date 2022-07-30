@@ -9,8 +9,8 @@ const menu = () =>{
             </div>
 
             <div className='opciones'>
-                <button>calcos para bicicleta</button>
-                <button>funda para asientos de bicicleta</button>
+                <button>Calcos</button>
+                <button>Fundas</button>
                 <button>Productos varios</button>
                 <CartWidget/>
             </div>
