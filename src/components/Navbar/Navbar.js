@@ -12,7 +12,7 @@ const menu = () =>{
             <div className="Categories">
                 <Link to='/category/Calcos' className="Option"><button>Calcos</button></Link>
                 <Link to='/category/Fundas' className="Option"><button>Fundas</button></Link>
-                <Link to='/category/Productos varios' className="Option"><button>Productos varios</button></Link>
+                <Link to='/category/productosVarios' className="Option"><button>Productos varios</button></Link>
             </div>
                 <CartWidget/>
             </div>

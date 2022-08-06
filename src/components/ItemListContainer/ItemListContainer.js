@@ -1,4 +1,4 @@
-
+import "./ItemListContainer.css"
 import { useState, useEffect } from 'react'
 import { getProducts, getProductsByCategory } from '../../asyncMock'
 import { useParams } from 'react-router-dom'

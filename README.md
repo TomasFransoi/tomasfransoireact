@@ -1,3 +1,6 @@
+Este es un proyecto creado por Tomas Fransoi
+Consiste en una pagina web acerca de la empresa de mi papa cus sus productos y precios oficiales
+Para crear este proyecto utilice react
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
