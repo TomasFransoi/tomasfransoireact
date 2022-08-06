@@ -1,15 +1,26 @@
-import Counter from "../Counter/Counter.js"
-const Item = ({product}) => {
-    const handleOnAdd = (quantity) => {
-        console.log(`la cantidad agregada es: ${quantity}`)
-      }
+import { Link } from 'react-router-dom'
+
+const Item = ({id, name, img, price,stock }) => {
+   
     return (
-        <li>
-            <h3>{product.name}</h3>
-            <p>El precio del producto es {product.price} pesos </p>
-            <p>Stock Disponible: {product.stock}</p>
-            <Counter stock={product.stock} onAdd={handleOnAdd}/>
-        </li>
+        <article className="CardItem">
+            <header className="Header">
+                <h2 className="ItemHeader">
+                    {name}
+                </h2>
+            </header>
+            <picture>
+                <img src={img} alt={name} className="ItemImg"/>
+            </picture>
+            <section>
+                <p className="Info">
+                    el precio del producto es ${price}
+                </p>
+            </section>           
+            <footer className='ItemFooter'>
+                <Link to={`/detail/${id}`} className='Option'>Ver detalle</Link>
+            </footer>
+        </article>
     )
 }
 
