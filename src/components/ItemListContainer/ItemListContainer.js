@@ -7,7 +7,7 @@ import ItemList from '../ItemList/ItemList'
 
 const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([])
-
+    const [loading,setLoading] = useState(true)
     const { categoryId } = useParams()
 
     useEffect(() => {
@@ -17,8 +17,14 @@ const ItemListContainer = ({ greeting }) => {
             setProducts(products)
         }).catch(error => {
             console.log(error)
-        })
+        }).finally(() => {
+            setLoading(false)
+        })  
     }, [categoryId])
+    if(loading) {
+    return <h1>Cargando productos...</h1>
+    }
+
     return (
         <>
             <h1>{greeting}</h1>

@@ -1,7 +1,7 @@
 import "./Navbar.css"
 import React from 'react'
 import CartWidget from '../CartWidget/CartWidget'
-import { Link } from "react-router-dom"
+import { Link,NavLink } from "react-router-dom"
 const menu = () =>{
     return(
         <nav className= 'Navbar'>
@@ -9,10 +9,10 @@ const menu = () =>{
                 <Link to='/'>
                 Fransoi Tienda
             </Link>
-            <div className="Categories">
-                <Link to='/category/Calcos' className="Option"><button>Calcos</button></Link>
-                <Link to='/category/Fundas' className="Option"><button>Fundas</button></Link>
-                <Link to='/category/productosVarios' className="Option"><button>Productos varios</button></Link>
+            <div className="categorias">
+                <NavLink to='/category/Calcos' className="Option"><button>Calcos</button></NavLink>
+                <NavLink to='/category/Fundas' className="Option"><button>Fundas</button></NavLink>
+                <NavLink to='/category/productosVarios' className="Option"><button>Productos varios</button></NavLink>
             </div>
                 <CartWidget/>
             </div>
