@@ -4,20 +4,23 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer.
 import Navbar from './components/Navbar/Navbar.js';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { CartContextProvider } from "./contexto/CartContext"
 function App() {
 
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route exact path='/' element={<ItemListContainer greeting='Productos Sin Filtrar'/>}/>
-          <Route exact path='/category/:categoryId' element={<ItemListContainer greeting='Productos  filtrados'/>} />
-          <Route exact path='/detail/:productId' element={<ItemDetailContainer />} />  
-          <Route exact path='*' element={<h1>404 no encontrado</h1>} /> 
-        </Routes>
-      </BrowserRouter>
+        <CartContextProvider>
+            <BrowserRouter>
+                <Navbar />
+                    <Routes>
+                    <Route exact path='/' element={<ItemListContainer greeting='Productos Sin Filtrar'/>}/>
+                    <Route exact path='/category/:categoryId' element={<ItemListContainer greeting='Productos  filtrados'/>} />
+                    <Route exact path='/detail/:productId' element={<ItemDetailContainer />} />  
+                    <Route exact path='*' element={<h1>No se ha encontrado la pagina buscada</h1>} /> 
+                </Routes>
+            </BrowserRouter>
+        </CartContextProvider>
     </div>
   );
 }

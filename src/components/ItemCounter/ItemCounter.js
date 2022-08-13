@@ -1,5 +1,5 @@
 import { useState} from "react"
-const Counter = ({stock, initial = 1, onConfirm}) => {
+const Counter = ({stock, initial = 1, onAdd}) => {
     const [cantidad,setCantidad] = useState (initial)
     const mas1 = () =>{
         if(cantidad < stock ) {
@@ -16,7 +16,7 @@ const Counter = ({stock, initial = 1, onConfirm}) => {
             <h3>{cantidad}</h3>
             <button onClick={menos1}>-</button>
             <button onClick={mas1}>+</button>
-            <button onClick={() => onConfirm(cantidad)}>Agregar al carrito</button>
+            <button onClick={() => onAdd(cantidad)}>Agregar al carrito</button>
         </div>
     )
 }

@@ -1,40 +1,24 @@
-import { useState } from "react"
+import { useState,useContext } from "react"
 import { Link } from "react-router-dom"
-import ItemCount from "../ItemCounter/ItemCounter"
-const InputCount = ({onConfirm, stock, initial= 1}) => {
-    const [count, setCount] = useState(initial)
+import ItemCount from '../ItemCounter/ItemCounter'
+import CartContext from '../../contexto/CartContext'
 
-    const handleChange = (e) => {
-        if(e.target.value <= stock) {
-            setCount(e.target.value)
-        }
-    }
-
-    return (
-        <div>
-            <input type='number' onChange={handleChange} value={count}/>
-            <button onClick={() => onConfirm(count)}>Agregar al carrito</button>
-        </div>
-    )
-}
-
-const ItemDetail = ({ name,descripcion,stock,price,img }) => {
-    const [inputType, setInputType] = useState('button')
+const ItemDetail = ({ id,name,descripcion,stock,price,img }) => {
     const [quantityToAdd, setQuantityToAdd] = useState(0)
-
+    const { addItem, getProductQuantity } = useContext(CartContext)
     const handleOnAdd = (quantity) => {
-        console.log('agregue al carrito')
-        console.log(quantity)
         setQuantityToAdd(quantity)
+        const productToAdd = {
+            id, name, price, quantity
+        }
+        addItem(productToAdd)
     }
-    const Count = inputType === 'button' ? ItemCount : InputCount
-
+    const productQuantity = getProductQuantity(id)
     return (
         <article>
-            <button onClick={() => setInputType(inputType === 'button' ? 'input' : 'button')}>{inputType === 'button' ? 'pasar a input' : 'pasar a button'}</button>
             <h1>{name}</h1>
             <picture>
-                <img src={img} alt={name} className="ItemImg"/>
+                <img src={img} alt={name} className="ImagenDelObjeto"/>
             </picture>
             <section>
             <p className="Info">{descripcion}</p>
@@ -42,13 +26,15 @@ const ItemDetail = ({ name,descripcion,stock,price,img }) => {
             <p className="Info">El stock restantes es {stock}</p>
 
             </section>
-            {
+            <footer>
+                {
                     quantityToAdd === 0 ? (
-                        <Count onConfirm={handleOnAdd} stock={stock} />
+                        <ItemCount onAdd={handleOnAdd} stock={stock} initial={productQuantity}/>
                     ) : (
-                        <Link to='/cart'>Finalizar compra</Link>
+                        <Link to='/cart'>Terminar compra</Link>
                     )
                 }
+            </footer>
         </article>
 
         

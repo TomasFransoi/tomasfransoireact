@@ -10,9 +10,9 @@ const menu = () =>{
                 Fransoi Tienda
             </Link>
             <div className="categorias">
-                <NavLink to='/category/Calcos' className="Option"><button>Calcos</button></NavLink>
-                <NavLink to='/category/Fundas' className="Option"><button>Fundas</button></NavLink>
-                <NavLink to='/category/productosVarios' className="Option"><button>Productos varios</button></NavLink>
+                <NavLink to='/category/Calcos' className="Opcion"><button>Calcos</button></NavLink>
+                <NavLink to='/category/Fundas' className="Opcion"><button>Fundas</button></NavLink>
+                <NavLink to='/category/productosVarios' className="Opcion"><button>Productos varios</button></NavLink>
             </div>
                 <CartWidget/>
             </div>
