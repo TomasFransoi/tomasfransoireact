@@ -4,7 +4,7 @@ import ItemCount from '../ItemCounter/ItemCounter'
 import CartContext from '../../contexto/CartContext'
 
 const ItemDetail = ({ id,name,descripcion,stock,price,img }) => {
-    const [quantityToAdd, setQuantityToAdd] = useState(0)
+    const [quantity, setQuantityToAdd] = useState(0)
     const { addItem, getProductQuantity } = useContext(CartContext)
     const handleOnAdd = (quantity) => {
         setQuantityToAdd(quantity)
@@ -28,10 +28,10 @@ const ItemDetail = ({ id,name,descripcion,stock,price,img }) => {
             </section>
             <footer>
                 {
-                    quantityToAdd === 0 ? (
+                    quantity === 0 ? (
                         <ItemCount onAdd={handleOnAdd} stock={stock} initial={productQuantity}/>
                     ) : (
-                        <Link to='/cart'>Terminar compra</Link>
+                        <Link to='/carrito'>Terminar compra</Link>
                     )
                 }
             </footer>

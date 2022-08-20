@@ -1,8 +1,12 @@
 import "./Navbar.css"
-import React from 'react'
+import react from 'react'
 import CartWidget from '../CartWidget/CartWidget'
 import { Link,NavLink } from "react-router-dom"
+import Cart from "../Cart/Cart"
 const menu = () =>{
+    if(Cart.length === 0){
+        CartWidget.style.visibility = "false"
+    }
     return(
         <nav className= 'Navbar'>
             <div className='opciones'>
