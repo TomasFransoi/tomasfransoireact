@@ -8,7 +8,7 @@ const firebaseConfig = {
     storageBucket: "tomasfransoireact.appspot.com",
     messagingSenderId: "217795719186",
     appId: "1:217795719186:web:9405e1b2416f8cd06668cb",
-    measurementId: "G-H2ENC6KK08"
+//    measurementId: "G-H2ENC6KK08"
 };
 
 // Initialize Firebase
