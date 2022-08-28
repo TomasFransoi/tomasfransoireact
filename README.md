@@ -1,3 +1,6 @@
+gif:
+https://media.giphy.com/media/jlcNq8EIxpVrQuxmfl/giphy-downsized-large.gif
+informacion:
 Este es un proyecto creado por Tomas Fransoi
 Consiste en una pagina web acerca de la empresa de mi papa cus sus productos y precios oficiales
 Para crear este proyecto utilice react
