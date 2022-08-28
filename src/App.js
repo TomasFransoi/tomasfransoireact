@@ -6,6 +6,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CartContextProvider } from "./contexto/CartContext"
 import Cart from "./components/Cart/Cart"
+import Checkout from './components/Checkout/Checkout';
 function App() {
 
 
@@ -20,6 +21,7 @@ function App() {
                     <Route exact path='/detail/:productId' element={<ItemDetailContainer />} />  
                     <Route exact path='*' element={<h1>No se ha encontrado la pagina buscada</h1>} /> 
                     <Route exact path="/carrito" element={<Cart/>}></Route>
+                    <Route path='/checkout' element={<Checkout />} />
                 </Routes>
 
             </BrowserRouter>
